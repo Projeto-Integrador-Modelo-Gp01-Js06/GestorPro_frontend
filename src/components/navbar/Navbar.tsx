@@ -5,11 +5,11 @@ function Navbar() {
 
 	return (
 		<>
-			<div className="flex justify-center w-full py-4 text-white bg-blue-950">
+			<div className="flex justify-center w-full py-4 text-white bg-gray-400">
 				<div className="container flex items-center justify-between mx-4 text-lg">
 					<Link to="/home">
 						<img
-							src="https://ik.imagekit.io/a210gfzra/GestorPro/GestorPro-removebg-preview.png?updatedAt=1740508682287"
+							src="https://ik.imagekit.io/a210gfzra/GestorPro/download__5_-removebg-preview-removebg-preview.png?updatedAt=1740514136152"
 							alt="Logo"
 							className="w-50"
 						/>
@@ -29,7 +29,7 @@ function Navbar() {
 							/>
 							<button
 								type="submit"
-								className="h-9 w-9 p-2.5 ms-2 text-sm font-medium text-white bg-teal-500 hover:bg-amber-300  rounded-lg border border-blue-950"
+								className="h-9 w-9 p-2.5 ms-2 text-sm font-medium text-white bg-rose-950 hover:bg-red-900  rounded-lg border border-gray-400"
 							>
 								<MagnifyingGlass
 									size={14}
