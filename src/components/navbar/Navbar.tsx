@@ -41,19 +41,19 @@ function Navbar() {
 
 					<div className="flex items-center gap-4 py-4">
 						<Link
-							to="/produtos"
+							to="/colaboradores"
 							className="hover:underline"
 						>
 							Colaboradores
 						</Link>
 						<Link
-							to="/categorias"
+							to="/cadcolaboradores"
 							className="hover:underline"
 						>
 							Cadastrar Colaborador
 						</Link>
 						<Link
-							to="/cadastrarcategoria"
+							to="/sobre"
 							className="hover:underline"
 						>
 							Sobre 
