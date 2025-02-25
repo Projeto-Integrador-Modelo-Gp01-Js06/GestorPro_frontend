@@ -3,9 +3,9 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function Home() {
     return (
-        <div className="flex justify-center bg-gray-50">
+        <div className="flex justify-center bg-gray-50 p-20 ">
             <div className="container grid grid-cols-2 text-rose-950">
-                <div className="flex flex-col items-center justify-center gap-4 py-4">
+                <div className="flex flex-col items-center justify-center gap-4 py-4 ">
                     <h2 className="text-5xl font-bold">GestorPro</h2>
                     <p className="text-xl text-center">Transforme a gestão de talentos da sua empresa com soluções inovadoras e conectadas na palma da sua mão!</p>
 
