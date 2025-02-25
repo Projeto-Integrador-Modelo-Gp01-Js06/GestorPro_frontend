@@ -29,7 +29,7 @@ function Navbar() {
 							/>
 							<button
 								type="submit"
-								className="h-9 w-9 p-2.5 ms-2 text-sm font-medium text-white bg-rose-950 hover:bg-red-900  rounded-lg border border-gray-400"
+								className="h-9 w-9 p-2.5 ms-2 text-sm font-medium text-white bg-rose-950 hover:bg-red-950  rounded-lg border border-gray-400"
 							>
 								<MagnifyingGlass
 									size={14}
