@@ -1,0 +1,68 @@
+import { MagnifyingGlass } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
+
+function Navbar() {
+
+	return (
+		<>
+			<div className="flex justify-center w-full py-4 text-white bg-blue-950">
+				<div className="container flex items-center justify-between mx-4 text-lg">
+					<Link to="/home">
+						<img
+							src="https://ik.imagekit.io/a210gfzra/GestorPro/GestorPro-removebg-preview.png?updatedAt=1740508682287"
+							alt="Logo"
+							className="w-50"
+						/>
+					</Link>
+
+					<div className="relative flex items-center justify-center w-2/5 text-black">
+						<form 
+							className="flex items-center justify-center w-full"
+						>
+							<input
+								className="w-10/12 px-4 py-4 bg-white rounded-lg h-9 focus:outline-none"
+								type="search"
+								placeholder="Pesquisar colaborador"
+								id="busca"
+								name="busca"
+								required
+							/>
+							<button
+								type="submit"
+								className="h-9 w-9 p-2.5 ms-2 text-sm font-medium text-white bg-teal-500 hover:bg-amber-300  rounded-lg border border-blue-950"
+							>
+								<MagnifyingGlass
+									size={14}
+									weight="bold"
+								/>
+							</button>
+						</form>
+					</div>
+
+					<div className="flex items-center gap-4 py-4">
+						<Link
+							to="/produtos"
+							className="hover:underline"
+						>
+							Colaboradores
+						</Link>
+						<Link
+							to="/categorias"
+							className="hover:underline"
+						>
+							Cadastrar Colaborador
+						</Link>
+						<Link
+							to="/cadastrarcategoria"
+							className="hover:underline"
+						>
+							Sobre 
+						</Link>
+					</div>
+				</div>
+			</div>
+		</>
+	)
+}
+
+export default Navbar
