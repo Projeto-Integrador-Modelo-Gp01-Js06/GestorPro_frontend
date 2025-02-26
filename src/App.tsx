@@ -6,6 +6,8 @@ import Home from "./pages/home/Home";
 import ListarColaboradores from "./components/colaboradores/listacolaboradores/ListaColaboradores";
 import FormColaborador from "./components/colaboradores/formcolaborador/FormColaborador";
 import DeletarColaborador from "./components/colaboradores/deletarcolaborador/DeletarColaborador";
+import Sobre from "./pages/sobre/Sobre";
+
 
 
 
@@ -15,7 +17,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <div>
+        
           <div className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -25,6 +27,12 @@ function App() {
               <Route path="/editarcolaborador/:id" element={<FormColaborador />} />
               <Route path="/deletarcolaborador/:id" element={<DeletarColaborador />} />
             </Routes>
+          <div className="min-h-[75vh]">
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/sobre" element={<Sobre />} />
+          </Routes>
           </div>
         </div>
         <Footer />
