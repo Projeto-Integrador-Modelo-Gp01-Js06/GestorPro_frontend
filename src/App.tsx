@@ -16,8 +16,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        
+        <Navbar />       
           <div className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -27,10 +26,8 @@ function App() {
               <Route path="/editarcolaborador/:id" element={<FormColaborador />} />
               <Route path="/deletarcolaborador/:id" element={<DeletarColaborador />} />
             </Routes>
-          <div className="min-h-[75vh]">
+          <div className="min-h-[20vh]">
           <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/home" element={<Home />} />
               <Route path="/sobre" element={<Sobre />} />
           </Routes>
           </div>
