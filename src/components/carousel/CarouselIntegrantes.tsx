@@ -46,7 +46,7 @@ const integrantes = [
   },
   {
     id: 7,
-    nome: "Simone Gonzaga",
+    nome: "Simone Gonzaga ",
     image: "/simone.png",
     github: "https://github.com/si-gonz",
     linkedin: "https://www.linkedin.com/in/simonegonzagag/",

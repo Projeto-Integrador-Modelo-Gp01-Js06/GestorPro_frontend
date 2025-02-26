@@ -14,6 +14,8 @@
     "@tailwindcss/vite": "^4.0.8",
     "axios": "^1.7.9",
     "phosphor-react": "^1.4.1",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-loader-spinner": "^6.1.6",
