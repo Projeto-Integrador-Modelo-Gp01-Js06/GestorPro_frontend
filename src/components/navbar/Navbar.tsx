@@ -47,7 +47,7 @@ function Navbar() {
 							Colaboradores
 						</Link>
 						<Link
-							to="/cadcolaboradores"
+							to="/cadastrarcolaborador"
 							className="hover:underline"
 						>
 							Cadastrar Colaborador
