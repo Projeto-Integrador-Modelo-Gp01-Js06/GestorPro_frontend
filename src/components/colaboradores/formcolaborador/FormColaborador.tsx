@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { ChangeEvent, useEffect, useState } from "react";
 import Colaborador from "../../../models/Colaborador";
 import { RotatingLines } from "react-loader-spinner";
+import { atualizar, cadastrar, listar } from "../../../service/Service";
 
 function FormColaborador() {
 
@@ -15,7 +15,7 @@ function FormColaborador() {
 
     async function buscarColaboradorPorId(id: string) {
         try {
-            await buscar(`/colaboradores/${id}`, setColaborador)
+            await listar(`/colaboradores/${id}`, setColaborador)
         } catch (error: any) {
             alert("Colaborador não encontrado!")
             retornar();
@@ -29,7 +29,10 @@ function FormColaborador() {
             setColaborador({
                 id: 0,
                 nome: "",
-                produto: null
+                email: "",
+                cargo: "",
+                salario: 0,
+                dataContratacao: ""
             })
         }
     }, [id])
@@ -76,7 +79,7 @@ function FormColaborador() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container flex flex-col items-center justify-center mx-auto pb-10">
             <h1 className="my-8 text-4xl text-center">
                 {id === undefined ? "Cadastrar Colaborador" : "Editar Colaborador"}
             </h1>
@@ -88,16 +91,64 @@ function FormColaborador() {
                     <label htmlFor="colaborador">Colaborador</label>
                     <input
                         type="text"
-                        placeholder="Colaborador"
+                        placeholder="Nome do Colaborador"
                         name="nome"
-                        className="p-2 border-1 rounded border-slate-700 bg-white"
+                        className="p-2 border-1 rounded border-slate-400 bg-white"
                         required
                         value={colaborador.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="colaborador">E-mail</label>
+                    <input
+                        type="text"
+                        placeholder="E-mail do Colaborador"
+                        name="email"
+                        className="p-2 border-1 rounded border-slate-400 bg-white"
+                        required
+                        value={colaborador.email}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="colaborador">Cargo</label>
+                    <input
+                        type="text"
+                        placeholder="Cargo Atual"
+                        name="cargo"
+                        className="p-2 border-1 rounded border-slate-400 bg-white"
+                        required
+                        value={colaborador.cargo}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="colaborador">Salário</label>
+                    <input
+                        type="text"
+                        placeholder="Salário Bruto do Colaborador"
+                        name="salario"
+                        className="p-2 border-1 rounded border-slate-400 bg-white"
+                        required
+                        value={colaborador.salario}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="colaborador">Data de Admissão</label>
+                    <input
+                        type="text"
+                        placeholder="Data de Contratação do Colaborador"
+                        name="dataContratacao"
+                        className="p-2 border-1 rounded border-slate-400 bg-white"
+                        required
+                        value={colaborador.dataContratacao}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
                 <button
-                    className="flex justify-center w-1/2 py-2 mx-auto rounded text-slate-100 bg-indigo-800 hover:bg-cyan-400"
+                    className="flex justify-center w-1/2 py-3 mt-5 mx-auto rounded text-slate-100 bg-gray-400 hover:bg-rose-950"
                     type="submit"
                 >
                     {isLoading ?

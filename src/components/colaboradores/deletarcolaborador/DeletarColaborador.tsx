@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { RotatingLines } from "react-loader-spinner"
 import { useNavigate, useParams } from "react-router-dom"
+import Colaborador from "../../../models/Colaborador"
+import { deletar, listar } from "../../../service/Service"
 
 function DeletarColaborador() {
 
@@ -13,7 +15,7 @@ function DeletarColaborador() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/postagens/${id}`, setColaborador, {})
+            await listar(`/colaborador/${id}`, setColaborador)
         } catch (error: any) {
             navigate('/')
         }
@@ -29,7 +31,7 @@ function DeletarColaborador() {
         setIsLoading(true)
 
         try {
-            await deletar(`/postagens/${id}`, {})
+            await deletar(`/colaborador/${id}`)
 
             alert('Colaborador apagada com sucesso')
 
@@ -61,8 +63,9 @@ function DeletarColaborador() {
                     Colaborador
                 </header>
                 <div className="p-4">
-                    <p className='text-xl h-full'>{colaborador.titulo}</p>
-                    <p>{colaborador.texto}</p>
+                    <p className='text-3xl h-full'>{colaborador.nome}</p>
+                    <p className='text-xl h-full'>{colaborador.email}</p>
+                    <p className='text-xl h-full'>{colaborador.cargo}</p>
                 </div>
                 <div className="flex">
                     <button

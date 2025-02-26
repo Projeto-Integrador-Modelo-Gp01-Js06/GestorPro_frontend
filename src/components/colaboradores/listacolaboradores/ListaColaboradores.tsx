@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import CardColaboradores from "../cardcolaboradores/CardColaboradores"
 import Colaborador from "../../../models/Colaborador"
-import { buscar } from "../../../services/Service"
 import { Oval } from "react-loader-spinner"
+import { listar } from "../../../service/Service"
 
 function ListarColaboradores() {
 
@@ -13,7 +13,7 @@ function ListarColaboradores() {
         setIsLoading(true)
 
         try {
-            await buscar('/colaboradores', setColaboradores)
+            await listar('/colaboradores', setColaboradores)
         } catch (error: any) {
             console.log("Erro ao listar as Colaboradores!")
         } finally {
@@ -28,10 +28,11 @@ function ListarColaboradores() {
 
     return (
         <>
-            {isLoading && (
+            <div className="flex justify-center items-center pt-8">
+                {isLoading && (
 
                 <Oval
-                    color="#0D9488"
+                    color="#99a1af"
                     height="80"
                     width="80"
                     visible={true}
@@ -39,21 +40,22 @@ function ListarColaboradores() {
                     wrapperStyle={{}}
                     wrapperClass=""
                 />
+                
             )}
+            </div>
             <div className="flex justify-center w-full my-4">
                 <div className="container flex flex-col mx-4">
                     {(!isLoading && colaboradores.length === 0) && (
-                        <span className="my-8 text-3xl text-center">
-                            Nenhuma categoria foi
-                            encontrada
+                        <span className="my-8 text-3xl text-center py-30">
+                            Nenhum colaborador foi encontrado
                         </span>
                     )}
 
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {colaboradores.map((categoria) => (
+                        {colaboradores.map((colaborador) => (
                             <CardColaboradores
-                                key={categoria.id}
-                                categoria={categoria}
+                                key={colaborador.id}
+                                colaborador={colaborador}
                             />
                         ))}
                     </div>
